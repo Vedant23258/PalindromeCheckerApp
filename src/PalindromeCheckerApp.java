@@ -1,22 +1,7 @@
-
-public class PalindromeCheckerApp{
-
-    public boolean checkPalindrome(String input) {
-        if (input == null || input.isEmpty()) {
-            return false;
-        }
-
-        int start = 0;
-        int end = input.length() - 1;
-
-        while (start < end) {
-            if (input.charAt(start) != input.charAt(end)) {
-                return false;
-            }
-            start++;
-            end--;
-        }
-        return true;
+public class PalindromeCheckerApp {
+    public static void main(String[] args){
+        System.out.println("Welcome to the Palindrome Checker Managment System");
+        System.out.println("Version : 1.0");
+        System.out.println("System intialized successfully");
     }
-
 }
