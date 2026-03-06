@@ -66,22 +66,3 @@ class DequeStrategy implements PalindromeStrategy {
     }
 }
 
-class PalindromeChecker {
-
-    private PalindromeStrategy strategy;
-
-    public PalindromeChecker(PalindromeStrategy strategy) {
-        this.strategy = strategy;
-    }
-
-    public boolean validate(String input) {
-        return strategy.check(input);
-    }
-}
-public class PalindromeCheckerApp {
-    public static void main(String[] args){
-        System.out.println("Welcome to the Palindrome Checker Managment System");
-        System.out.println("Version : 1.0");
-        System.out.println("System intialized successfully");
-    }
-}
