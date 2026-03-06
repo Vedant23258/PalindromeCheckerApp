@@ -9,14 +9,19 @@ public class PalindromeCheckerApp {
         System.out.print("Input : ");
         String input = sc.nextLine();
 
-        PalindromeStrategy strategy = new StackStrategy();
+        PalindromeStrategy stackStrategy = new StackStrategy();
+        long start1 = System.nanoTime();
+        boolean result1 = stackStrategy.check(input);
+        long end1 = System.nanoTime();
 
+        PalindromeStrategy dequeStrategy = new DequeStrategy();
+        long start2 = System.nanoTime();
+        boolean result2 = dequeStrategy.check(input);
+        long end2 = System.nanoTime();
 
-        PalindromeChecker checker = new PalindromeChecker(strategy);
-
-        boolean result = checker.validate(input);
-
-        System.out.println("Palindrome : " + result);
+        System.out.println("Is Palindrome? : " + result1);
+        System.out.println("Stack Execution Time : " + (end1 - start1) + " ns");
+        System.out.println("Deque Execution Time : " + (end2 - start2) + " ns");
 
         sc.close();
     }
@@ -64,24 +69,3 @@ class DequeStrategy implements PalindromeStrategy {
 
         return true;
     }
-}
-
-class PalindromeChecker {
-
-    private PalindromeStrategy strategy;
-
-    public PalindromeChecker(PalindromeStrategy strategy) {
-        this.strategy = strategy;
-    }
-
-    public boolean validate(String input) {
-        return strategy.check(input);
-    }
-}
-public class PalindromeCheckerApp {
-    public static void main(String[] args){
-        System.out.println("Welcome to the Palindrome Checker Managment System");
-        System.out.println("Version : 1.0");
-        System.out.println("System intialized successfully");
-    }
-}
