@@ -69,4 +69,3 @@ class DequeStrategy implements PalindromeStrategy {
 
         return true;
     }
-}
